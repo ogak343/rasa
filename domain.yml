@@ -1,8 +1,14 @@
 version: "3.0"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
 intents:
   - greet
   - bye
   - ask_weather
+
 responses:
   utter_greet:
     - text: "Hello! How can I help?"
@@ -10,4 +16,9 @@ responses:
     - text: "Goodbye!"
   utter_ask_weather:
     - text: "Sure! It's sunny today."
+  utter_default:
+    - text: "Sorry, I didn't understand that. Can you rephrase?"
+    - text: "I'm not sure what you mean. Could you try again?"
+    - text: "Hmm, I didn't get that. Can you say it differently?"
+
 actions: []
