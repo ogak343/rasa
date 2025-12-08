@@ -6,5 +6,5 @@ pipeline:
 policies:
 - name: RulePolicy
 - name: MemoizationPolicy
-- name: TEDPolicy
+- name: UnexpecTEDIntentPolicy
 assistant_id: 20251207-172144-connected-storyboard

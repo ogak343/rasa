@@ -1,7 +1,8 @@
 services:
   rasa:
-    image: rasa/rasa:3.6.17-full
-    command: ["run", "--enable-api", "--cors", "*", "--debug"]
+    build:
+      context: .
+      dockerfile: Dockerfile.rasa
     ports:
       - "5005:5005"
     volumes:
@@ -13,6 +14,13 @@ services:
       - ./credentials.yml:/app/credentials.yml
     depends_on:
       - actions
+    environment:
+      - RASA_LICENSE=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjYjAwMjcwYi02YmM2LTQwZjktYjkzYy05NzMzNzgzOWQ4ZGYiLCJpYXQiOjE3NjUxOTQ2MzksIm5iZiI6MTc2NTE5NDYzOSwic2NvcGUiOiJyYXNhOnBybyByYXNhOnBybzpjaGFtcGlvbiByYXNhOnZvaWNlIiwiZXhwIjoxODU5ODg5MDM5LCJlbWFpbCI6ImhhbWlkb3Zhc2xvbjEzQGdtYWlsLmNvbSIsImNvbXBhbnkiOiJSYXNhIENoYW1waW9ucyJ9.vl_zlt7NWqmgLDD_gV0wUn9gWZfJSSEQtfeH7MDwgZ1hk6yUO3Um8kZv5VNIIa7_WAeOwLRWc1X20rt3wzOe1m22Wegt68X5dpXYF2BPi7UtnGcwyjT5KhTJC96vHp1Yl9RjO54QF8aY-cjG9k0BUpHLuWGdWDINrXCCrlCNwb-cJ3J-GVpNIM3WUMsreu9HDYBXLFemhz_Ee7EDIVG12HoN050bVQViDlXpoolLJw54VYBJFwDhYNt-XdKaOcuufRRD9JCSmog1QT3D6FcikUoArnQSqZWFZuvOkpwjmU-qxNKULrsVfrAtyWeQwYyR7uNpP1D-tfLtcOcgSK5Lkg
+    # networks:
+    #   - caddy
+    # labels:
+    #   - caddy=hello.example.com
+    #   - caddy.reverse_proxy=rasa:5005
 
   actions:
     build:
@@ -23,3 +31,9 @@ services:
     command: [ "start" ]
     volumes:
       - ./actions:/app/actions
+    # networks:
+    #   - caddy
+
+# networks:
+#   caddy:
+#     external: true
