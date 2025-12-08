@@ -1,0 +1,10 @@
+language: en
+pipeline:
+- name: WhitespaceTokenizer
+- name: CountVectorsFeaturizer
+- name: DIETClassifier
+policies:
+- name: RulePolicy
+- name: MemoizationPolicy
+- name: TEDPolicy
+assistant_id: 20251207-172144-connected-storyboard

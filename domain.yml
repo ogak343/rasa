@@ -1,0 +1,13 @@
+version: "3.0"
+intents:
+  - greet
+  - bye
+  - ask_weather
+responses:
+  utter_greet:
+    - text: "Hello! How can I help?"
+  utter_bye:
+    - text: "Goodbye!"
+  utter_ask_weather:
+    - text: "Sure! It's sunny today."
+actions: []

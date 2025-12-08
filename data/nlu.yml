@@ -1,0 +1,18 @@
+version: "3.0"
+nlu:
+  - intent: greet
+    examples: |
+      - hi
+      - hello
+      - hey
+  - intent: bye
+    examples: |
+      - bye
+      - goodbye
+  - intent: ask_weather
+    examples: |
+      - I want to know the weather
+      - What's the weather like?
+      - Tell me the weather
+      - Weather forecast please
+

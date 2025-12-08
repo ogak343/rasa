@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  rasa:
+    image: rasa/rasa:3.6.17-full
+    command: >
+      sh -c "export SANIC_NO_UVLOOP=1 PYTHONASYNCIODEBUG=1 && rasa run --enable-api --cors '*' --debug -p 5005"
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./models:/app/models
+      - ./actions:/app/actions
+      - ./config.yml:/app/config.yml
+      - ./domain.yml:/app/domain.yml
+      - ./data:/app/data
+      - ./credentials.yml:/app/credentials.yml
+      - ./endpoints.yml:/app/endpoints.yml
+    depends_on:
+      - actions
+
+  actions:
+    build:
+      context: .
+      dockerfile: Dockerfile.actions
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./actions:/app/actions
+    entrypoint: ""

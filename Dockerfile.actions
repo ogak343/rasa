@@ -1,0 +1,17 @@
+# Base image
+FROM rasa/rasa:3.6.17-full
+
+# Working directory
+WORKDIR /app
+
+# Install only Rasa SDK for custom actions
+RUN pip install --no-cache-dir rasa-sdk==3.6.2
+
+# Copy your actions code
+COPY actions /app/actions
+
+# Expose the actions port
+EXPOSE 5055
+
+# Command to run actions server
+CMD ["rasa", "run", "actions", "--port", "5055"]
