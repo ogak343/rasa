@@ -1,24 +1,122 @@
 version: "3.0"
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
-
 intents:
   - greet
-  - bye
-  - ask_weather
+  - want_to_lose_weight
+  - give_weight
+  - ask_exercises
+  - ask_when_results
+  - ask_soreness
+  - ask_sleep
+  - ask_motivation
+  - ask_home_workout
+  - ask_water
+  - ask_cardio_vs_strength
+  - ask_high_knees_effect
+  - ask_backache_training
+  - goodbye
 
 responses:
-  utter_greet:
-    - text: "Hello! How can I help?"
-  utter_bye:
-    - text: "Goodbye!"
-  utter_ask_weather:
-    - text: "Sure! It's sunny today."
-  utter_default:
-    - text: "Sorry, I didn't understand that. Can you rephrase?"
-    - text: "I'm not sure what you mean. Could you try again?"
-    - text: "Hmm, I didn't get that. Can you say it differently?"
 
-actions: []
+  utter_greet:
+    - text: "Hello . I am your personal fitness assistant . How I can help you?"
+
+  utter_ask_weight:
+    - text: "Got it! 💪 Let's work together to create a plan that fits your goals. We can start with a combination of healthy eating, regular exercise, and tracking your progress. Let me know your weight."
+
+  utter_weight_plan:
+    - text: |
+        "Thanks for sharing your weight! Let’s create a tailored plan to help you reach your goals. Based on your current weight of 86 kg, I’ll provide a workout and meal plan that will help you gradually lose weight while staying healthy.
+
+        Breakfast:
+        - Scrambled eggs with spinach and a slice of whole-grain toast
+        OR a smoothie with protein powder, banana, and almond milk
+
+        Lunch:
+        - Grilled chicken breast with quinoa and mixed vegetables (broccoli, bell peppers, etc.)
+        OR a chickpea and avocado salad with olive oil and lemon dressing
+
+        Dinner:
+        - Baked salmon or tofu with steamed broccoli and brown rice
+        OR stir-fried vegetables with lean turkey or tempeh
+
+        Snacks:
+        - Greek yogurt with berries and chia seeds
+        - A small handful of almonds or an apple"
+
+  utter_exercises:
+    - text: |
+        "Here’s your 3-day workout plan:
+
+        Day 1 - Full Body Strength Training  
+        Warm-up: 5 minutes of light cardio (e.g., brisk walking or cycling)  
+        Bodyweight Squats: 3 sets of 12 reps  
+        Push-ups: 3 sets of 10 reps (modify if needed)  
+        Planks: 3 sets, holding for 20–30 seconds  
+        Lunges: 3 sets of 12 reps per leg  
+        Cool-down: Stretching for 5–10 minutes
+
+        Day 2 - Cardio & Core  
+        Warm-up: 5-minute walk or jog  
+        Cardio: 20–30 minutes of jogging, cycling, or brisk walking  
+        Core Work:  
+        Russian Twists: 3 sets of 20 reps  
+        Leg Raises: 3 sets of 15 reps  
+        Mountain Climbers: 3 sets of 20 reps  
+        Cool-down: Stretch
+
+        Day 3 - Active Rest Day  
+        Light activity like walking, yoga, or stretching for 20–30 minutes. It's important to stay active even on rest days!"
+
+  utter_when_results:
+    - text: |
+        "Great question! 😊 Results can vary from person to person, but with consistency, you should start noticing some changes within 2–4 weeks.
+
+        Week 1–2:
+        - You may feel more energized and see small improvements in strength or endurance.
+
+        Week 3–4:
+        - Clothes may fit differently, and you might notice slight weight loss or muscle toning.
+
+        1–2 months:
+        - Visible changes in body composition (like fat loss or muscle gain) and more consistent progress in strength or fitness levels."
+
+  utter_soreness:
+    - text: |
+        "Soreness is normal after a tough workout! 😊 Rest, hydrate, and stretch gently to help your muscles recover. If needed, try light activity like walking, and make sure you're eating enough protein to repair your muscles!"
+
+  utter_sleep:
+    - text: |
+        "Good sleep is key to recovery and overall health! 😴 Aim for 7–9 hours each night to allow your muscles to repair and to feel energized. If you're having trouble sleeping, try avoiding screens before bed, creating a calming bedtime routine, and keeping your room cool and dark."
+
+  utter_motivation:
+    - text: |
+        "You’re stronger than you think! Take it one step at a time, and celebrate your progress, no matter how small. You’re doing amazing!"
+
+  utter_home_workout:
+    - text: |
+        "Here are some simple home workout ideas you can do anytime:
+
+        - Bodyweight Squats: Stand with feet shoulder-width apart and squat down, then return to standing. Great for legs and glutes.
+        - Push-ups: Lower your chest to the ground and push back up. Builds upper body strength.
+        - Plank: Hold a push-up position, keeping your body straight. Strengthens your core."
+
+  utter_water:
+    - text: |
+        "The general recommendation is to drink about 8 cups (2 liters) of water a day, but it varies based on factors like activity level, climate, and your health. Some people may need more if they exercise a lot or live in hot environments. Listen to your body and drink when you're thirsty!"
+
+  utter_cardio_vs_strength:
+    - text: |
+        "Both cardio and strength training are important, but it depends on your goals. Cardio is great for improving heart health and burning fat, while strength training builds muscle and boosts metabolism. Ideally, a mix of both gives the best results."
+
+  utter_high_knees:
+    - text: |
+        "Yes, high knees are a great cardio exercise! They get your heart rate up, improve endurance, and help tone your legs and core. To see the best results, try incorporating them into a full-body workout or adding intensity with intervals."
+
+  utter_backache:
+    - text: |
+        "If you have a backache, it's best to avoid intense training, especially exercises that strain your back. Focus on gentle stretches or low-impact movements like walking. If the pain persists, consider resting or consulting a healthcare professional."
+
+  utter_goodbye:
+    - text: |
+        "You're very welcome! Feel free to reach out anytime you have more questions—I’m always here to help. Take care of yourself, and don’t hesitate to ask whenever you need advice. Have a great day!"

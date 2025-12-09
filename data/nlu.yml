@@ -1,18 +1,59 @@
 version: "3.0"
 nlu:
+
   - intent: greet
     examples: |
-      - hi
-      - hello
-      - hey
-  - intent: bye
-    examples: |
-      - bye
-      - goodbye
-  - intent: ask_weather
-    examples: |
-      - I want to know the weather
-      - What's the weather like?
-      - Tell me the weather
-      - Weather forecast please
+      - Hello
+      - Hello.
 
+  - intent: want_to_lose_weight
+    examples: |
+      - I am a little overweight. Help me lose weight.
+
+  - intent: give_weight
+    examples: |
+      - 86
+
+  - intent: ask_exercises
+    examples: |
+      - What about exercises?
+
+  - intent: ask_when_results
+    examples: |
+      - When I notice the results?
+
+  - intent: ask_soreness
+    examples: |
+      - What should I do if I’m sore after working out?
+
+  - intent: ask_sleep
+    examples: |
+      - What about sleep?
+
+  - intent: ask_motivation
+    examples: |
+      - Give some motivation for today
+
+  - intent: ask_home_workout
+    examples: |
+      - What about home workout ideas?
+
+  - intent: ask_water
+    examples: |
+      - How much water I have to drink daily?
+
+  - intent: ask_cardio_vs_strength
+    examples: |
+      - Which is better cardio or strength training?
+
+  - intent: ask_high_knees_effect
+    examples: |
+      - I mostly do high knees. Does it gives effect?
+
+  - intent: ask_backache_training
+    examples: |
+      - Today, I have a backache. Can I train?
+
+  - intent: goodbye
+    examples: |
+      - Thank you for your help. If I have some questions, I will ask later.
