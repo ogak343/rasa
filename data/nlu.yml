@@ -12,7 +12,7 @@ nlu:
 
   - intent: give_weight
     examples: |
-      - 86
+      - 86kg
 
   - intent: ask_exercises
     examples: |
